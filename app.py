@@ -10,7 +10,7 @@ with col1:
     st.image(image, width=120)
 with col2:
     st.title("👤 Mojtaba Roohi")
-    st.write("💻 Aspiring Machine Learning Engineer")
+    st.write("💻 Senior Chemist Interested in Machine Learning ")
     st.write("📧 Email: m.roohi916@gmail.com")
     st.write("🌐 GitHub: [github.com/mojtaba72075](https://github.com/mojtaba72075)")
 
@@ -27,10 +27,20 @@ GPA: 16.07 / 20
 # Work Experience
 st.header("💼 Work Experience")
 st.write("""
-**Senior Chemist **, NISOC  
-_Jul 2019 – Present  
-- Built  classification models and regression models  
-- Used pandas, scikit-learn, and matplotlib, tensor flow, keras
+**Senior Chemist**, NISOC  
+_Jul 2019 – Present
+           
+**Process Engineer**, Persian Gulf Bidboland Gas Refining Company\n 
+_Oct 2018 – Jul 2019
+           
+**Process Engineer**, Aria Phosphoric Jonoub\n 
+_May 2018 – Oct 2018 
+         
+**Engineer of Production Management**, NISOC\n 
+_Jan 2016 – Oct 2017  
+                                        
+- Built  classification and regression models  
+- Used pandas, scikit-learn, matplotlib, tensor flow, keras
 """)
 
 # Projects / Portfolio
