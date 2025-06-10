@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from tensorflow.keras.models import load_model
+from tensorflow import load_model
 from PIL import Image, ImageOps
 
 st.set_page_config(page_title="MNIST Digit Classifier", layout="centered")
@@ -8,17 +8,20 @@ st.set_page_config(page_title="MNIST Digit Classifier", layout="centered")
 st.title("🧠 MNIST Digit Classifier")
 st.write("Upload a handwritten digit image (28x28 grayscale) to classify it.")
 
+# Load model
 @st.cache_resource
 def load_cnn_model():
-    return load_model("mnist_model.h5")
+    model = load_model("mnist_model.h5")
+    return model
 
 model = load_cnn_model()
 
+# Upload image
 uploaded_file = st.file_uploader("📤 Upload a digit image", type=["png", "jpg", "jpeg"])
 
-if uploaded_file:
-    image = Image.open(uploaded_file).convert("L")
-    image = ImageOps.invert(image)  # MNIST digits are white on black
+if uploaded_file is not None:
+    image = Image.open(uploaded_file).convert("L")  # Convert to grayscale
+    image = ImageOps.invert(image)                  # MNIST digits are white on black
     image = image.resize((28, 28))
     st.image(image, caption="Processed Image", width=150)
 
