@@ -1,9 +1,22 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(page_title="My Resume & Portfolio", layout="centered")
+st.set_page_config(page_title="My Resume", layout="wide")
 
-# Profile Section
+st.title("🧑‍💻 Mojtaba Roohi Resume & ML Portfolio")
+
+# Sidebar Theme Toggle
+theme = st.sidebar.radio("Select Theme", ["Light", "Dark"])
+if theme == "Dark":
+    st.markdown(
+        """
+        <style>
+        body { background-color: #0e1117; color: white; }
+        </style>
+        """, unsafe_allow_html=True
+    )
+
+# Profile section
 col1, col2 = st.columns([1, 3])
 with col1:
     image = Image.open("profile.jpg")
